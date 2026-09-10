@@ -272,6 +272,11 @@
     font-weight: 600;
     margin-top: 4px;
   }
+  .plan-main .plan-for{
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
   .plan-main ul{
     list-style:none;
     padding:0;
@@ -340,6 +345,38 @@
   }
   table.tariff tr td.amount{ color: var(--navy); font-weight: 600; }
 
+  .formula-grid{
+    display:flex;
+    align-items: stretch;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 28px 0;
+    margin-bottom: 8px;
+  }
+  .formula-item{
+    flex: 1;
+    padding: 0 18px;
+  }
+  .formula-item:first-child{ padding-left: 0; }
+  .formula-label{
+    font-family:'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .formula-note{
+    font-size: 0.84rem;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .formula-plus{
+    align-self:center;
+    color: var(--line-strong);
+    font-size: 1.3rem;
+    font-family: 'Fraunces', serif;
+    padding: 0 4px;
+  }
   .conditions{
     margin-top: 40px;
     display:grid;
@@ -472,6 +509,10 @@
     .plan-main ul{ grid-template-columns: 1fr; }
     .plan-row.featured{ margin: 0; padding-left: 0; padding-right: 0; }
     .conditions{ grid-template-columns: 1fr; }
+    .formula-grid{ flex-direction: column; }
+    .formula-item{ padding: 14px 0; border-top: 1px solid var(--line); }
+    .formula-item:first-child{ border-top: none; padding-top: 0; }
+    .formula-plus{ display:none; }
     .download{ flex-direction:column; align-items:flex-start; }
     .footer-grid{ grid-template-columns: 1fr; }
     table.tariff{ font-size: 0.86rem; }
@@ -504,21 +545,21 @@
   <div class="wrap">
     <div class="kicker">Contabilidad · Planillas · Asesoría tributaria · Outsourcing contable</div>
     <h1>Orden contable y financiero, sin contratar un área completa.</h1>
-    <p class="lede">Llevamos la contabilidad, la emisión de comprobantes y el control administrativo de tu empresa, con planes que crecen junto a tu operación — desde lo operativo hasta lo tributario.</p>
+    <p class="lede">Llevamos la contabilidad, la emisión de comprobantes y el control administrativo de tu empresa, con un plan armado según el tamaño y el movimiento real de tu negocio.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#planes">Ver planes de servicio</a>
-      <a class="btn btn-outline" href="Planes_AXIS_Outsourcing_Contable.pdf" download>Descargar propuesta en PDF</a>
+      <a class="btn btn-outline" href="https://wa.me/51933095818?text=Hola%2C%20quiero%20que%20me%20ayuden%20a%20elegir%20el%20plan%20contable%20ideal%20para%20mi%20empresa" target="_blank" rel="noopener">Cotizar mi plan por WhatsApp</a>
     </div>
   </div>
   <div class="statement-strip">
     <div class="wrap">
       <div class="cell">
-        <div class="num">Desde S/ 890</div>
-        <div class="label">al mes, por el Plan Operativo</div>
+        <div class="num">5 planes</div>
+        <div class="label">escalonados según el tamaño de tu empresa</div>
       </div>
       <div class="cell">
-        <div class="num">4 planes</div>
-        <div class="label">escalonados según tu operación</div>
+        <div class="num">A tu medida</div>
+        <div class="label">el precio se define por régimen, volumen y trabajadores</div>
       </div>
       <div class="cell">
         <div class="num">Lunes a domingo</div>
@@ -564,80 +605,98 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">Planes de servicio</div>
-      <h2>Cada plan incluye al anterior</h2>
-      <p>Empieza por lo operativo y avanza hacia una gestión contable y tributaria completa, al ritmo de tu empresa.</p>
+      <h2>Un plan para cada etapa de tu negocio</h2>
+      <p>Cada plan incluye al anterior y suma más alcance a medida que tu empresa crece. El precio final se conversa según tu régimen, tu volumen de comprobantes y tu número de trabajadores — descarga el plan que más se parece a tu negocio y te confirmamos el detalle.</p>
     </div>
 
     <div class="plans">
       <div class="plan-row">
         <div class="plan-track"><div class="plan-dot"></div></div>
         <div class="plan-main">
-          <div class="plan-name">Plan Operativo</div>
+          <div class="plan-name">Plan Emprende</div>
+          <div class="plan-for">Negocios muy pequeños o que recién se están formalizando</div>
           <ul>
-            <li>Emisión de facturas electrónicas</li>
-            <li>Emisión de guías de remisión</li>
-            <li>Envío de comprobantes por correo</li>
-            <li>Organización digital de documentos</li>
-            <li>Soporte operativo por WhatsApp</li>
+            <li>Registro de compras y ventas</li>
+            <li>Declaración mensual SUNAT</li>
+            <li>Cálculo de IGV y/o impuesto correspondiente</li>
+            <li>Resumen mensual básico</li>
+            <li>Asesoría básica tributaria</li>
           </ul>
         </div>
         <div class="plan-price">
-          <span class="amount">S/ 890</span>
-          <span class="per">al mes</span>
+          <a class="btn btn-outline btn-sm" href="AXIS_Plan_Emprende.pdf" download>Descargar plan</a>
         </div>
       </div>
 
       <div class="plan-row">
         <div class="plan-track"><div class="plan-dot"></div></div>
         <div class="plan-main">
-          <div class="plan-name">Plan Administrativo</div>
-          <div class="plan-includes">Incluye el Plan Operativo, más:</div>
+          <div class="plan-name">Plan Básico</div>
+          <div class="plan-for">Microempresas con operación ya en marcha</div>
           <ul>
-            <li>Control de cuentas por cobrar</li>
-            <li>Envío de estados de cuenta</li>
-            <li>Seguimiento de vencimientos</li>
-            <li>Una reunión semanal</li>
+            <li>Registro de compras y ventas</li>
+            <li>Declaración mensual, IGV y renta</li>
+            <li>Libros/registros electrónicos que correspondan</li>
+            <li>Resumen mensual de resultados</li>
+            <li>Asesoría contable y tributaria</li>
           </ul>
         </div>
         <div class="plan-price">
-          <span class="amount">S/ 1,190</span>
-          <span class="per">al mes</span>
+          <a class="btn btn-outline btn-sm" href="AXIS_Plan_Basico.pdf" download>Descargar plan</a>
         </div>
       </div>
 
       <div class="plan-row featured">
         <div class="plan-track"><div class="plan-dot"></div></div>
         <div class="plan-main">
-          <div class="plan-name">Plan Gerencial</div>
-          <div class="plan-includes">Incluye el Plan Administrativo, más:</div>
+          <div class="plan-name">Plan Pyme</div>
+          <div class="plan-includes">Incluye el Plan Básico, más:</div>
           <ul>
-            <li>Control de Kardex</li>
-            <li>Reporte mensual de ingresos, egresos y utilidad</li>
-            <li>Resumen financiero</li>
-            <li>Una reunión semanal</li>
+            <li>SIRE y libros electrónicos</li>
+            <li>Revisión de buzón SOL</li>
+            <li>Elaboración de PLAME y AFPNet</li>
+            <li>Asesoría laboral básica</li>
+            <li>Reporte mensual de situación del negocio</li>
           </ul>
         </div>
         <div class="plan-price">
-          <span class="amount">S/ 1,590</span>
-          <span class="per">al mes</span>
+          <a class="btn btn-primary btn-sm" href="AXIS_Plan_Pyme.pdf" download>Descargar plan</a>
         </div>
       </div>
 
       <div class="plan-row">
         <div class="plan-track"><div class="plan-dot"></div></div>
         <div class="plan-main">
-          <div class="plan-name">Plan Integral</div>
-          <div class="plan-includes">Incluye el Plan Gerencial, más:</div>
+          <div class="plan-name">Plan Crece</div>
+          <div class="plan-includes">Incluye el Plan Pyme, más:</div>
           <ul>
-            <li>Declaración mensual de impuestos</li>
-            <li>Registro de compras y ventas</li>
             <li>Contabilidad mensual</li>
-            <li>Asesoría contable y tributaria</li>
+            <li>PDT y declaraciones SUNAT</li>
+            <li>Asesoría tributaria y laboral</li>
+            <li>Reporte financiero mensual</li>
+            <li>Reunión de asesoría mensual</li>
           </ul>
         </div>
         <div class="plan-price">
-          <span class="amount">S/ 1,990</span>
-          <span class="per">al mes</span>
+          <a class="btn btn-outline btn-sm" href="AXIS_Plan_Crece.pdf" download>Descargar plan</a>
+        </div>
+      </div>
+
+      <div class="plan-row">
+        <div class="plan-track"><div class="plan-dot"></div></div>
+        <div class="plan-main">
+          <div class="plan-name">Plan Empresa</div>
+          <div class="plan-for">Empresas con mayor volumen, inventarios o complejidad tributaria</div>
+          <ul>
+            <li>Contabilidad integral</li>
+            <li>Planillas y gestión laboral</li>
+            <li>Estados financieros y análisis contable</li>
+            <li>Reportes gerenciales</li>
+            <li>Atención prioritaria</li>
+          </ul>
+        </div>
+        <div class="plan-price">
+          <a class="btn btn-outline btn-sm" href="AXIS_Plan_Empresa.pdf" download>Descargar plan</a>
         </div>
       </div>
     </div>
@@ -647,41 +706,39 @@
 <section id="tarifario">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Tarifario referencial</div>
-      <h2>También puedes contratar por servicio</h2>
-      <p>Si prefieres armar tu propio alcance en lugar de un plan cerrado, este es el honorario mensual referencial de cada servicio.</p>
+      <div class="kicker">Cómo se arma tu plan</div>
+      <h2>El precio se conversa, no se adivina</h2>
+      <p>Dos empresas del mismo régimen pueden tener una carga de trabajo muy distinta. Por eso el honorario final de cada plan se confirma según cuatro factores — nunca según el régimen tributario solo.</p>
     </div>
 
-    <table class="tariff">
-      <thead>
-        <tr>
-          <th>Servicio</th>
-          <th class="amount">Honorario mensual (S/)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Emisión de facturas, guías, envío de comprobantes y organización digital</td><td class="amount">590</td></tr>
-        <tr><td>Control de cuentas por cobrar</td><td class="amount">300</td></tr>
-        <tr><td>Estados de cuenta</td><td class="amount">200</td></tr>
-        <tr><td>Organización documental de compras</td><td class="amount">250</td></tr>
-        <tr><td>Organización documental de ventas</td><td class="amount">200</td></tr>
-        <tr><td>Control y actualización de Kardex</td><td class="amount">450</td></tr>
-        <tr><td>Control de movimientos bancarios</td><td class="amount">450</td></tr>
-        <tr><td>Reporte financiero mensual</td><td class="amount">300</td></tr>
-        <tr><td>Estado de situación financiera</td><td class="amount">500</td></tr>
-        <tr><td>Declaración mensual (Régimen Especial)</td><td class="amount">250</td></tr>
-        <tr><td>Registro de compras y ventas</td><td class="amount">200</td></tr>
-        <tr><td>Reunión semanal de seguimiento</td><td class="amount">250</td></tr>
-        <tr><td>Asesoría administrativa y financiera</td><td class="amount">350</td></tr>
-      </tbody>
-    </table>
+    <div class="formula-grid">
+      <div class="formula-item">
+        <div class="formula-label">Régimen tributario</div>
+        <div class="formula-note">RUS, RER, MYPE Tributario o Régimen General</div>
+      </div>
+      <span class="formula-plus">+</span>
+      <div class="formula-item">
+        <div class="formula-label">Volumen de comprobantes</div>
+        <div class="formula-note">Compras y ventas que emites al mes</div>
+      </div>
+      <span class="formula-plus">+</span>
+      <div class="formula-item">
+        <div class="formula-label">Complejidad</div>
+        <div class="formula-note">Bancos, inventarios, detracciones, comercio exterior</div>
+      </div>
+      <span class="formula-plus">+</span>
+      <div class="formula-item">
+        <div class="formula-label">Trabajadores</div>
+        <div class="formula-note">Planilla y obligaciones laborales a cargo</div>
+      </div>
+    </div>
 
     <ul class="conditions">
       <li>Los servicios pueden contratarse individualmente o de forma integral.</li>
       <li>Los honorarios consideran la atención y ejecución de actividades de lunes a domingo, de acuerdo con las necesidades operativas de la empresa.</li>
       <li>La tarifa incluye la disponibilidad, seguimiento continuo, organización documental y atención oportuna.</li>
       <li>Si el volumen de operaciones o el alcance del servicio aumenta de manera significativa, los honorarios podrán revisarse de común acuerdo.</li>
-      <li>En la contratación de varios servicios podrá establecerse una tarifa preferencial.</li>
+      <li>Cada propuesta de plan descargable incluye el detalle de servicios adicionales fuera del alcance base, por si tu negocio los necesita.</li>
     </ul>
   </div>
 </section>
@@ -690,10 +747,10 @@
   <div class="wrap">
     <div class="download">
       <div>
-        <h2>Lleva esta propuesta contigo</h2>
-        <p>Descarga el documento completo con los planes, el tarifario y las condiciones del servicio, en formato PDF.</p>
+        <h2>¿No sabes qué plan te conviene?</h2>
+        <p>Cuéntanos cómo es tu operación — régimen, comprobantes al mes y número de trabajadores — y te ayudamos a elegir el plan correcto, sin compromiso.</p>
       </div>
-      <a class="btn btn-primary" href="Planes_AXIS_Outsourcing_Contable.pdf" download>Descargar PDF</a>
+      <a class="btn btn-primary" href="https://wa.me/51933095818?text=Hola%2C%20quiero%20que%20me%20ayuden%20a%20elegir%20el%20plan%20contable%20ideal%20para%20mi%20empresa" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
     </div>
   </div>
 </section>
