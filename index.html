@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AXIS Outsourcing Contable — Tu crecimiento, nuestra misión</title>
+<meta name="description" content="Contabilidad, planillas, asesoría tributaria y outsourcing contable para empresas en Perú.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0F2A44;
+    --navy-soft: #1B3B5A;
+    --ink: #1C2430;
+    --ink-soft: #4B5563;
+    --paper: #F4F6F3;
+    --paper-raised: #FFFFFF;
+    --line: #D7DCD3;
+    --line-strong: #B9C1B4;
+    --green: #1E7F5C;
+    --green-deep: #145C41;
+    --brass: #A9762F;
+    --brass-soft: #F1E4CE;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    font-feature-settings: "tnum" 1, "lnum" 1;
+    line-height: 1.55;
+  }
+
+  h1, h2, h3, .serif{
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--navy);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; }
+  img { max-width: 100%; display:block; }
+
+  .wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(244,246,243,0.92);
+    backdrop-filter: saturate(140%) blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 16px 28px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .brand{
+    display:flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .brand .name{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size: 1.35rem;
+    color: var(--navy);
+  }
+  .brand .tagline{
+    font-size: 0.72rem;
+    color: var(--green-deep);
+    font-weight: 500;
+    margin-top: 2px;
+  }
+  nav.primary{
+    display:flex;
+    gap: 28px;
+    align-items:center;
+  }
+  nav.primary a{
+    text-decoration:none;
+    font-size: 0.94rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+    transition: color .15s, border-color .15s;
+  }
+  nav.primary a:hover{ color: var(--navy); border-color: var(--line-strong); }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration:none;
+    border: 1px solid transparent;
+    cursor:pointer;
+    white-space: nowrap;
+  }
+  .btn-primary{ background: var(--navy); color: #fff; }
+  .btn-primary:hover{ background: var(--navy-soft); }
+  .btn-outline{ background: transparent; color: var(--navy); border-color: var(--line-strong); }
+  .btn-outline:hover{ border-color: var(--navy); }
+  .btn-whatsapp{ background: var(--green); color: #fff; }
+  .btn-whatsapp:hover{ background: var(--green-deep); }
+  .btn-sm{ padding: 8px 14px; font-size: 0.82rem; }
+
+  .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+  .nav-toggle span{ display:block; width:22px; height:2px; background:var(--navy); margin:5px 0; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 76px 0 0;
+  }
+  .kicker{
+    font-size: 0.86rem;
+    color: var(--green-deep);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .hero h1{
+    font-size: clamp(2.3rem, 5vw, 3.4rem);
+    font-weight: 600;
+    max-width: 15ch;
+  }
+  .hero p.lede{
+    margin-top: 22px;
+    font-size: 1.12rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+  .hero-actions{
+    margin-top: 32px;
+    display:flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .statement-strip{
+    margin-top: 56px;
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .statement-strip .wrap{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .statement-strip .cell{
+    padding: 22px 0;
+    border-left: 1px solid var(--line);
+  }
+  .statement-strip .cell:first-child{ border-left: none; }
+  .statement-strip .cell{ padding-left: 22px; }
+  .statement-strip .num{
+    font-family:'Fraunces', serif;
+    font-size: 1.7rem;
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .statement-strip .label{
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
+  section{ padding: 84px 0; }
+  section + section{ border-top: 1px solid var(--line); }
+
+  .section-head{
+    margin-bottom: 44px;
+    max-width: 60ch;
+  }
+  .section-head .kicker{ margin-bottom: 10px; }
+  .section-head h2{ font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 600; }
+  .section-head p{ color: var(--ink-soft); margin-top: 12px; }
+
+  /* ---------- Servicios ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+  }
+  .service{
+    padding: 26px 22px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .service:last-child{ border-right: none; }
+  .service .mark{
+    width: 30px; height: 3px;
+    background: var(--green);
+    margin-bottom: 16px;
+  }
+  .service h3{
+    font-size: 1.02rem;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--navy);
+  }
+  .service p{
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+
+  /* ---------- Planes (ledger progression) ---------- */
+  .plans{
+    position: relative;
+  }
+  .plan-row{
+    display:grid;
+    grid-template-columns: 34px 1fr auto;
+    gap: 20px;
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+    position: relative;
+  }
+  .plan-row:last-child{ border-bottom: 1px solid var(--line); }
+  .plan-track{
+    position: relative;
+    display:flex;
+    justify-content:center;
+  }
+  .plan-track::before{
+    content:"";
+    position:absolute;
+    top:0; bottom:0;
+    left:50%;
+    width:1px;
+    background: var(--line-strong);
+  }
+  .plan-row:first-child .plan-track::before{ top: 50%; }
+  .plan-row:last-child .plan-track::before{ bottom: 50%; }
+  .plan-dot{
+    width:10px; height:10px;
+    border-radius:50%;
+    background: var(--paper);
+    border: 2px solid var(--green);
+    margin-top: 6px;
+    position: relative;
+    z-index:1;
+  }
+  .plan-row.featured .plan-dot{ border-color: var(--brass); background: var(--brass); }
+
+  .plan-main .plan-name{
+    font-family:'Fraunces', serif;
+    font-size: 1.28rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .plan-main .plan-includes{
+    font-size: 0.86rem;
+    color: var(--brass);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .plan-main ul{
+    list-style:none;
+    padding:0;
+    margin: 14px 0 0;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+  }
+  .plan-main li{
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    padding-left: 16px;
+    position: relative;
+  }
+  .plan-main li::before{
+    content:"—";
+    position:absolute;
+    left:0;
+    color: var(--line-strong);
+  }
+  .plan-price{
+    text-align:right;
+    white-space: nowrap;
+    align-self:start;
+  }
+  .plan-price .amount{
+    font-family:'Fraunces', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .plan-price .per{
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    display:block;
+  }
+  .plan-row.featured{
+    background: var(--brass-soft);
+    margin: 0 -28px;
+    padding-left: 28px;
+    padding-right: 28px;
+    border-radius: 4px;
+  }
+
+  /* ---------- Tarifario ---------- */
+  table.tariff{
+    width:100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  table.tariff th, table.tariff td{
+    text-align:left;
+    padding: 13px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  table.tariff th{
+    font-weight:600;
+    color: var(--navy);
+    font-size: 0.82rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  table.tariff td.amount, table.tariff th.amount{
+    text-align:right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  table.tariff tr td.amount{ color: var(--navy); font-weight: 600; }
+
+  .conditions{
+    margin-top: 40px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 40px;
+  }
+  .conditions li{
+    font-size: 0.94rem;
+    color: var(--ink-soft);
+    padding-left: 18px;
+    position:relative;
+    margin-bottom: 12px;
+    list-style:none;
+  }
+  .conditions li::before{
+    content:"—";
+    position:absolute; left:0;
+    color: var(--line-strong);
+  }
+
+  /* ---------- Descarga ---------- */
+  .download{
+    background: var(--navy);
+    color: #fff;
+    border-radius: 6px;
+    padding: 44px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .download h2{ color:#fff; font-size: 1.5rem; font-weight:600; }
+  .download p{ color: #C7D2CE; margin-top: 8px; max-width: 46ch; font-size:0.95rem; }
+  .download .btn-primary{ background:#fff; color: var(--navy); }
+  .download .btn-primary:hover{ background: #E8ECE9; }
+
+  /* ---------- Contacto / footer ---------- */
+  footer{
+    background: var(--paper-raised);
+    border-top: 1px solid var(--line);
+    padding: 56px 0 32px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 32px;
+  }
+  footer h3{
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  footer .signature{
+    font-family:'Fraunces', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+  }
+  footer .role{
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+  footer a.contact-line{
+    display:block;
+    text-decoration:none;
+    color: var(--ink);
+    font-size: 0.94rem;
+    margin-bottom: 8px;
+  }
+  footer a.contact-line:hover{ color: var(--green-deep); }
+  .foot-bottom{
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    gap: 10px;
+  }
+
+  /* ---------- Floating WhatsApp ---------- */
+  .float-wa{
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 50;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    background: var(--green);
+    color:#fff;
+    text-decoration:none;
+    padding: 13px 18px;
+    border-radius: 30px;
+    box-shadow: 0 6px 20px rgba(20,92,65,0.35);
+    font-weight:600;
+    font-size: 0.9rem;
+    transition: transform .15s, background .15s;
+  }
+  .float-wa:hover{ background: var(--green-deep); transform: translateY(-2px); }
+  .float-wa svg{ width:20px; height:20px; flex-shrink:0; }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 860px){
+    nav.primary{
+      position: fixed;
+      top: 68px; left:0; right:0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 18px 28px 26px;
+      gap: 16px;
+      display:none;
+    }
+    nav.primary.open{ display:flex; }
+    .nav-toggle{ display:block; }
+    .header-inner .btn-whatsapp.desktop-only{ display:none; }
+    .services-grid{ grid-template-columns: 1fr 1fr; }
+    .statement-strip .wrap{ grid-template-columns: 1fr; }
+    .statement-strip .cell{ border-left:none; border-top:1px solid var(--line); padding-left:0; }
+    .statement-strip .cell:first-child{ border-top:none; }
+    .plan-row{ grid-template-columns: 1fr; }
+    .plan-track{ display:none; }
+    .plan-price{ text-align:left; margin-top: 6px; }
+    .plan-main ul{ grid-template-columns: 1fr; }
+    .plan-row.featured{ margin: 0; padding-left: 0; padding-right: 0; }
+    .conditions{ grid-template-columns: 1fr; }
+    .download{ flex-direction:column; align-items:flex-start; }
+    .footer-grid{ grid-template-columns: 1fr; }
+    table.tariff{ font-size: 0.86rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="name">AXIS</span>
+      <span class="tagline">Outsourcing Contable</span>
+    </div>
+    <nav class="primary" id="primaryNav">
+      <a href="#servicios">Servicios</a>
+      <a href="#planes">Planes</a>
+      <a href="#tarifario">Tarifario</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/51933095818?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20AXIS%20Outsourcing%20Contable" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </nav>
+    <a class="btn btn-whatsapp btn-sm desktop-only" href="https://wa.me/51933095818?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20AXIS%20Outsourcing%20Contable" target="_blank" rel="noopener" style="display:none">WhatsApp</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Contabilidad · Planillas · Asesoría tributaria · Outsourcing contable</div>
+    <h1>Orden contable y financiero, sin contratar un área completa.</h1>
+    <p class="lede">Llevamos la contabilidad, la emisión de comprobantes y el control administrativo de tu empresa, con planes que crecen junto a tu operación — desde lo operativo hasta lo tributario.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#planes">Ver planes de servicio</a>
+      <a class="btn btn-outline" href="Planes_AXIS_Outsourcing_Contable.pdf" download>Descargar propuesta en PDF</a>
+    </div>
+  </div>
+  <div class="statement-strip">
+    <div class="wrap">
+      <div class="cell">
+        <div class="num">Desde S/ 890</div>
+        <div class="label">al mes, por el Plan Operativo</div>
+      </div>
+      <div class="cell">
+        <div class="num">4 planes</div>
+        <div class="label">escalonados según tu operación</div>
+      </div>
+      <div class="cell">
+        <div class="num">Lunes a domingo</div>
+        <div class="label">seguimiento continuo y atención oportuna</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Lo que hacemos</div>
+      <h2>Cuatro frentes, un solo interlocutor</h2>
+      <p>Los servicios pueden contratarse de manera individual o de forma integral, según los requerimientos de tu operación.</p>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service">
+      <div class="mark"></div>
+      <h3>Contabilidad</h3>
+      <p>Registro de compras y ventas, contabilidad mensual y estados financieros.</p>
+    </div>
+    <div class="service">
+      <div class="mark"></div>
+      <h3>Planillas</h3>
+      <p>Gestión de planillas y obligaciones laborales de tu equipo.</p>
+    </div>
+    <div class="service">
+      <div class="mark"></div>
+      <h3>Asesoría tributaria</h3>
+      <p>Declaraciones mensuales y acompañamiento frente a SUNAT.</p>
+    </div>
+    <div class="service">
+      <div class="mark"></div>
+      <h3>Outsourcing contable</h3>
+      <p>Emisión de comprobantes, organización documental y soporte operativo diario.</p>
+    </div>
+  </div>
+</section>
+
+<section id="planes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Planes de servicio</div>
+      <h2>Cada plan incluye al anterior</h2>
+      <p>Empieza por lo operativo y avanza hacia una gestión contable y tributaria completa, al ritmo de tu empresa.</p>
+    </div>
+
+    <div class="plans">
+      <div class="plan-row">
+        <div class="plan-track"><div class="plan-dot"></div></div>
+        <div class="plan-main">
+          <div class="plan-name">Plan Operativo</div>
+          <ul>
+            <li>Emisión de facturas electrónicas</li>
+            <li>Emisión de guías de remisión</li>
+            <li>Envío de comprobantes por correo</li>
+            <li>Organización digital de documentos</li>
+            <li>Soporte operativo por WhatsApp</li>
+          </ul>
+        </div>
+        <div class="plan-price">
+          <span class="amount">S/ 890</span>
+          <span class="per">al mes</span>
+        </div>
+      </div>
+
+      <div class="plan-row">
+        <div class="plan-track"><div class="plan-dot"></div></div>
+        <div class="plan-main">
+          <div class="plan-name">Plan Administrativo</div>
+          <div class="plan-includes">Incluye el Plan Operativo, más:</div>
+          <ul>
+            <li>Control de cuentas por cobrar</li>
+            <li>Envío de estados de cuenta</li>
+            <li>Seguimiento de vencimientos</li>
+            <li>Una reunión semanal</li>
+          </ul>
+        </div>
+        <div class="plan-price">
+          <span class="amount">S/ 1,190</span>
+          <span class="per">al mes</span>
+        </div>
+      </div>
+
+      <div class="plan-row featured">
+        <div class="plan-track"><div class="plan-dot"></div></div>
+        <div class="plan-main">
+          <div class="plan-name">Plan Gerencial</div>
+          <div class="plan-includes">Incluye el Plan Administrativo, más:</div>
+          <ul>
+            <li>Control de Kardex</li>
+            <li>Reporte mensual de ingresos, egresos y utilidad</li>
+            <li>Resumen financiero</li>
+            <li>Una reunión semanal</li>
+          </ul>
+        </div>
+        <div class="plan-price">
+          <span class="amount">S/ 1,590</span>
+          <span class="per">al mes</span>
+        </div>
+      </div>
+
+      <div class="plan-row">
+        <div class="plan-track"><div class="plan-dot"></div></div>
+        <div class="plan-main">
+          <div class="plan-name">Plan Integral</div>
+          <div class="plan-includes">Incluye el Plan Gerencial, más:</div>
+          <ul>
+            <li>Declaración mensual de impuestos</li>
+            <li>Registro de compras y ventas</li>
+            <li>Contabilidad mensual</li>
+            <li>Asesoría contable y tributaria</li>
+          </ul>
+        </div>
+        <div class="plan-price">
+          <span class="amount">S/ 1,990</span>
+          <span class="per">al mes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifario">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Tarifario referencial</div>
+      <h2>También puedes contratar por servicio</h2>
+      <p>Si prefieres armar tu propio alcance en lugar de un plan cerrado, este es el honorario mensual referencial de cada servicio.</p>
+    </div>
+
+    <table class="tariff">
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th class="amount">Honorario mensual (S/)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Emisión de facturas, guías, envío de comprobantes y organización digital</td><td class="amount">590</td></tr>
+        <tr><td>Control de cuentas por cobrar</td><td class="amount">300</td></tr>
+        <tr><td>Estados de cuenta</td><td class="amount">200</td></tr>
+        <tr><td>Organización documental de compras</td><td class="amount">250</td></tr>
+        <tr><td>Organización documental de ventas</td><td class="amount">200</td></tr>
+        <tr><td>Control y actualización de Kardex</td><td class="amount">450</td></tr>
+        <tr><td>Control de movimientos bancarios</td><td class="amount">450</td></tr>
+        <tr><td>Reporte financiero mensual</td><td class="amount">300</td></tr>
+        <tr><td>Estado de situación financiera</td><td class="amount">500</td></tr>
+        <tr><td>Declaración mensual (Régimen Especial)</td><td class="amount">250</td></tr>
+        <tr><td>Registro de compras y ventas</td><td class="amount">200</td></tr>
+        <tr><td>Reunión semanal de seguimiento</td><td class="amount">250</td></tr>
+        <tr><td>Asesoría administrativa y financiera</td><td class="amount">350</td></tr>
+      </tbody>
+    </table>
+
+    <ul class="conditions">
+      <li>Los servicios pueden contratarse individualmente o de forma integral.</li>
+      <li>Los honorarios consideran la atención y ejecución de actividades de lunes a domingo, de acuerdo con las necesidades operativas de la empresa.</li>
+      <li>La tarifa incluye la disponibilidad, seguimiento continuo, organización documental y atención oportuna.</li>
+      <li>Si el volumen de operaciones o el alcance del servicio aumenta de manera significativa, los honorarios podrán revisarse de común acuerdo.</li>
+      <li>En la contratación de varios servicios podrá establecerse una tarifa preferencial.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="descarga">
+  <div class="wrap">
+    <div class="download">
+      <div>
+        <h2>Lleva esta propuesta contigo</h2>
+        <p>Descarga el documento completo con los planes, el tarifario y las condiciones del servicio, en formato PDF.</p>
+      </div>
+      <a class="btn btn-primary" href="Planes_AXIS_Outsourcing_Contable.pdf" download>Descargar PDF</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Contador responsable</h3>
+        <div class="signature">José Marcos</div>
+        <div class="role">Contador Público Colegiado</div>
+      </div>
+      <div>
+        <h3>Escríbenos</h3>
+        <a class="contact-line" href="mailto:axiscontableoutsourcing@gmail.com">axiscontableoutsourcing@gmail.com</a>
+        <a class="contact-line" href="https://wa.me/51933095818?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20AXIS%20Outsourcing%20Contable" target="_blank" rel="noopener">+51 933 095 818 (WhatsApp)</a>
+      </div>
+      <div>
+        <h3>AXIS Outsourcing Contable</h3>
+        <p style="font-size:0.9rem; color:var(--ink-soft); margin:0;">Contabilidad, planillas, asesoría tributaria y outsourcing contable. Tu crecimiento, nuestra misión.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> AXIS Outsourcing Contable</span>
+      <span>Propuesta de servicios administrativos, financieros y contables</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/51933095818?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20AXIS%20Outsourcing%20Contable" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.15-.19.29-.75.93-.92 1.12-.17.19-.34.22-.63.07-.29-.15-1.23-.45-2.35-1.44-.87-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.5-.65-.5-.17 0-.36-.02-.56-.02-.19 0-.5.07-.77.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.15.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.32.19 1.81.11.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.24.17-1.37-.07-.12-.26-.19-.55-.34z"/><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.08-1.33A9.96 9.96 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.13c-1.67 0-3.23-.46-4.57-1.26l-.33-.19-3.02.79.81-2.94-.21-.3A8.12 8.12 0 0 1 3.9 12c0-4.48 3.65-8.13 8.12-8.13S20.15 7.52 20.15 12s-3.65 8.13-8.13 8.13z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var navToggle = document.getElementById('navToggle');
+  var primaryNav = document.getElementById('primaryNav');
+  navToggle.addEventListener('click', function(){
+    primaryNav.classList.toggle('open');
+  });
+  primaryNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ primaryNav.classList.remove('open'); });
+  });
+</script>
+
+</body>
+</html>
